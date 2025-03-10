@@ -19,7 +19,7 @@ namespace RainbowMage.OverlayPlugin
         private ILogger logger;
         private PluginMain main;
         private FFXIVRepository repository;
-        private int ffxivPid = -1;
+        private int bnsPid = -1;
         private Timer focusTimer;
 
         public OverlayHider(TinyIoCContainer container)
@@ -35,10 +35,10 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                repository.RegisterProcessChangedHandler(UpdateFFXIVProcess);
+                GetNeoProcess();
             } catch (Exception ex)
             {
-                logger.Log(LogLevel.Error, "Failed to register process watcher for FFXIV; this is only an issue if you're playing FFXIV. As a consequence, OverlayPlugin won't be able to hide overlays if you're not in-game.");
+                logger.Log(LogLevel.Error, "Failed to register process watcher for B&SNeo; this is only an issue if you're playing B&SNeo. As a consequence, OverlayPlugin won't be able to hide overlays if you're not in-game.");
                 logger.Log(LogLevel.Error, "Details: " + ex.ToString());
             }
 
@@ -48,15 +48,11 @@ namespace RainbowMage.OverlayPlugin
             focusTimer.Start();
         }
 
-        private void UpdateFFXIVProcess(Process p)
+        private void GetNeoProcess()
         {
-            if (p != null)
-            {
-                ffxivPid = p.Id;
-            } else
-            {
-                ffxivPid = -1;
-            }
+            var processes = Process.GetProcessesByName("BNSR");
+            logger.Log(LogLevel.Debug, $"Found {processes.Length} B&SNeo processes.");
+            bnsPid = processes.Length > 0 ? processes[0].Id : -1;
         }
 
         public void UpdateOverlays()
@@ -94,14 +90,14 @@ namespace RainbowMage.OverlayPlugin
                     if (pid == 0)
                         return;
 
-                    if (ffxivPid != -1)
+                    if (bnsPid != -1)
                     {
-                        gameActive = pid == ffxivPid || pid == Process.GetCurrentProcess().Id;
+                        gameActive = pid == bnsPid || pid == Process.GetCurrentProcess().Id;
                     } else
                     {
                         var exePath = Process.GetProcessById((int)pid).MainModule.FileName;
                         var fileName = Path.GetFileName(exePath.ToString());
-                        gameActive = (fileName == "ffxiv.exe" || fileName == "ffxiv_dx11.exe" ||
+                        gameActive = (fileName == "BNSR.exe" ||
                                         exePath.ToString() == Process.GetCurrentProcess().MainModule.FileName);
                     }
                 }
