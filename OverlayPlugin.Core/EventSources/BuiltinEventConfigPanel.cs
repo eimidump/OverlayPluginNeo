@@ -161,5 +161,10 @@ namespace RainbowMage.OverlayPlugin.EventSources
         {
             this.config.LogLines = this.cbLogLines.Checked;
         }
+
+        private void experimentalWarning_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

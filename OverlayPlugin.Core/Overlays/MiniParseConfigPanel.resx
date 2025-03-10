@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnClearCache.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 505</value>
+    <value>2, 386</value>
   </data>
   <data name="btnClearCache.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 37</value>
@@ -789,7 +789,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 558</value>
+    <value>610, 458</value>
   </data>
   <data name="tabGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -948,7 +948,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 558</value>
+    <value>610, 458</value>
   </data>
   <data name="tabHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1188,7 +1188,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>4, 22</value>
   </data>
   <data name="tabAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 558</value>
+    <value>610, 458</value>
   </data>
   <data name="tabAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1371,7 +1371,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>4, 22</value>
   </data>
   <data name="tabACTWS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 558</value>
+    <value>610, 458</value>
   </data>
   <data name="tabACTWS.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1395,7 +1395,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>0, 3</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 584</value>
+    <value>618, 484</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -1509,7 +1509,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>2</value>
   </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 593</value>
+    <value>3, 493</value>
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1533,7 +1533,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>0</value>
   </data>
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonMiniParseOpenDevTools" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonMiniParseReloadBrowser" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonResetOverlayPosition" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33,Percent,33.33,Absolute,239" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonMiniParseOpenDevTools" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonMiniParseReloadBrowser" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonResetOverlayPosition" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33,Percent,33,33,Absolute,239" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1542,7 +1542,7 @@ Hiding an overlay only turns it invisible. It still runs in the background and c
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>646, 655</value>
+    <value>646, 555</value>
   </data>
   <data name="&gt;&gt;hotkeyColEnabled.Name" xml:space="preserve">
     <value>hotkeyColEnabled</value>

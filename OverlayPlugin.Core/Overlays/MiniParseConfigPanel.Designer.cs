@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniParseConfigPanel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.btnClearCache = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.cbHideOutOfCombat = new System.Windows.Forms.CheckBox();
             this.applyPresetCombo = new System.Windows.Forms.ComboBox();
@@ -79,7 +80,6 @@
             this.buttonMiniParseOpenDevTools = new System.Windows.Forms.Button();
             this.buttonMiniParseReloadBrowser = new System.Windows.Forms.Button();
             this.buttonResetOverlayPosition = new System.Windows.Forms.Button();
-            this.btnClearCache = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -129,6 +129,13 @@
             this.tabGeneral.Controls.Add(this.label12);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.UseVisualStyleBackColor = true;
+            // 
+            // btnClearCache
+            // 
+            resources.ApplyResources(this.btnClearCache, "btnClearCache");
+            this.btnClearCache.Name = "btnClearCache";
+            this.btnClearCache.UseVisualStyleBackColor = true;
+            this.btnClearCache.Click += new System.EventHandler(this.btnClearCache_Click);
             // 
             // label14
             // 
@@ -469,13 +476,6 @@
             this.buttonResetOverlayPosition.Name = "buttonResetOverlayPosition";
             this.buttonResetOverlayPosition.UseVisualStyleBackColor = true;
             this.buttonResetOverlayPosition.Click += new System.EventHandler(this.buttonResetOverlayPosition_Click);
-            // 
-            // btnClearCache
-            // 
-            resources.ApplyResources(this.btnClearCache, "btnClearCache");
-            this.btnClearCache.Name = "btnClearCache";
-            this.btnClearCache.UseVisualStyleBackColor = true;
-            this.btnClearCache.Click += new System.EventHandler(this.btnClearCache_Click);
             // 
             // MiniParseConfigPanel
             // 

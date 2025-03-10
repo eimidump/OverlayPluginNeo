@@ -35,7 +35,6 @@
             this.cbEndEncounterAfterWipe = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.comboSortKey = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +43,9 @@
             this.checkSortDesc = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbUpdateDuringImport = new System.Windows.Forms.CheckBox();
-            this.experimentalWarning = new System.Windows.Forms.Label();
             this.lblLogLines = new System.Windows.Forms.Label();
             this.cbLogLines = new System.Windows.Forms.CheckBox();
+            this.experimentalWarning = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +56,6 @@
             this.tableLayoutPanel1.Controls.Add(this.cbEndEncounterAfterWipe, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboSortKey, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
@@ -66,9 +64,9 @@
             this.tableLayoutPanel1.Controls.Add(this.checkSortDesc, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbUpdateDuringImport, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.experimentalWarning, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.lblLogLines, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.cbLogLines, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.experimentalWarning, 0, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // cbEndEncounterOutOfCombat
@@ -94,11 +92,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
             // 
             // comboSortKey
             // 
@@ -147,12 +140,6 @@
             this.cbUpdateDuringImport.UseVisualStyleBackColor = true;
             this.cbUpdateDuringImport.CheckedChanged += new System.EventHandler(this.cbUpdateDuringImport_CheckedChanged);
             // 
-            // experimentalWarning
-            // 
-            resources.ApplyResources(this.experimentalWarning, "experimentalWarning");
-            this.tableLayoutPanel1.SetColumnSpan(this.experimentalWarning, 2);
-            this.experimentalWarning.Name = "experimentalWarning";
-            // 
             // lblLogLines
             // 
             resources.ApplyResources(this.lblLogLines, "lblLogLines");
@@ -164,6 +151,13 @@
             this.cbLogLines.Name = "cbLogLines";
             this.cbLogLines.UseVisualStyleBackColor = true;
             this.cbLogLines.CheckedChanged += new System.EventHandler(this.cbLogLines_CheckedChanged);
+            // 
+            // experimentalWarning
+            // 
+            resources.ApplyResources(this.experimentalWarning, "experimentalWarning");
+            this.tableLayoutPanel1.SetColumnSpan(this.experimentalWarning, 2);
+            this.experimentalWarning.Name = "experimentalWarning";
+            this.experimentalWarning.Click += new System.EventHandler(this.experimentalWarning_Click);
             // 
             // BuiltinEventConfigPanel
             // 
@@ -189,7 +183,6 @@
         private System.Windows.Forms.CheckBox checkSortDesc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbUpdateDuringImport;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbEndEncounterOutOfCombat;
         private System.Windows.Forms.CheckBox cbEndEncounterAfterWipe;
         private System.Windows.Forms.Label label7;
