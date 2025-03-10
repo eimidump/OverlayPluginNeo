@@ -43,7 +43,6 @@ namespace RainbowMage.OverlayPlugin.EventSources
         private void SetupControlProperties()
         {
             this.textUpdateInterval.Text = "" + config.UpdateInterval;
-            this.textEnmityInterval.Text = "" + config.EnmityIntervalMs;
 
             this.comboSortKey.DisplayMember = "Key";
             this.comboSortKey.ValueMember = "Value";
@@ -65,14 +64,6 @@ namespace RainbowMage.OverlayPlugin.EventSources
                 this.InvokeIfRequired(() =>
                 {
                     this.textUpdateInterval.Text = "" + config.UpdateInterval;
-                });
-            };
-
-            this.config.EnmityIntervalChanged += (o, e) =>
-            {
-                this.InvokeIfRequired(() =>
-                {
-                    this.textEnmityInterval.Text = "" + config.EnmityIntervalMs;
                 });
             };
 
@@ -164,18 +155,6 @@ namespace RainbowMage.OverlayPlugin.EventSources
         private void cbEndEncounterOutOfCombat_CheckedChanged(object sender, EventArgs e)
         {
             this.config.EndEncounterOutOfCombat = this.cbEndEncounterOutOfCombat.Checked;
-        }
-
-        private void TextEnmityInterval_Leave(object sender, EventArgs e)
-        {
-            if (int.TryParse(this.textEnmityInterval.Text, out int value))
-            {
-                this.config.EnmityIntervalMs = value;
-            }
-            else
-            {
-                this.textEnmityInterval.Text = "" + this.config.EnmityIntervalMs;
-            }
         }
 
         private void cbLogLines_CheckedChanged(object sender, EventArgs e)

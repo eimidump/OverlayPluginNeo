@@ -86,10 +86,6 @@
     <Compile Include="Controls\RenameOverlayDialog.Designer.cs">
       <DependentUpon>RenameOverlayDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventSources\CactbotEventSource.cs" />
-    <Compile Include="EventSources\CactbotEventSourceConfig.cs" />
-    <Compile Include="EventSources\CactbotJSEvents.cs" />
-    <Compile Include="EventSources\EnmityEventSource.cs" />
     <Compile Include="Integration\UnstableNewLogLines.cs" />
     <Compile Include="MemoryProcessors\EnmityMemory50.cs" />
     <Compile Include="MemoryProcessors\EnmityMemory52.cs" />
@@ -321,6 +317,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GeneralConfigTab.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GeneralConfigTab.zh-CN.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>

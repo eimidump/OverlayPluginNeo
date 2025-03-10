@@ -35,7 +35,6 @@
             this.cbEndEncounterAfterWipe = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textEnmityInterval = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboSortKey = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +57,6 @@
             this.tableLayoutPanel1.Controls.Add(this.cbEndEncounterAfterWipe, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textEnmityInterval, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboSortKey, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
@@ -96,12 +94,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // textEnmityInterval
-            // 
-            resources.ApplyResources(this.textEnmityInterval, "textEnmityInterval");
-            this.textEnmityInterval.Name = "textEnmityInterval";
-            this.textEnmityInterval.Leave += new System.EventHandler(this.TextEnmityInterval_Leave);
             // 
             // label5
             // 
@@ -197,7 +189,6 @@
         private System.Windows.Forms.CheckBox checkSortDesc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbUpdateDuringImport;
-        private System.Windows.Forms.TextBox textEnmityInterval;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbEndEncounterOutOfCombat;
         private System.Windows.Forms.CheckBox cbEndEncounterAfterWipe;

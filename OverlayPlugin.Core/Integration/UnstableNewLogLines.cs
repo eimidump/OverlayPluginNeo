@@ -17,7 +17,6 @@ namespace RainbowMage.OverlayPlugin.Integration
         private bool inCutscene = false;
         private FFXIVRepository repo = null;
         private NetworkParser parser = null;
-        private EnmityEventSource enmitySource = null;
         private ILogger logger = null;
         private string logPath = null;
         private ConcurrentQueue<string> logQueue = null;
@@ -27,7 +26,6 @@ namespace RainbowMage.OverlayPlugin.Integration
         {
             repo = container.Resolve<FFXIVRepository>();
             parser = container.Resolve<NetworkParser>();
-            enmitySource = container.Resolve<EnmityEventSource>();
             logger = container.Resolve<ILogger>();
             logPath = Path.GetDirectoryName(ActGlobals.oFormActMain.LogFilePath) + "_OverlayPlugin.log";
             var config = container.Resolve<BuiltinEventConfig>();
@@ -52,7 +50,6 @@ namespace RainbowMage.OverlayPlugin.Integration
         public void Enable()
         {
             parser.OnOnlineStatusChanged += OnOnlineStatusChange;
-            enmitySource.CombatStatusChanged += OnCombatStatusChange;
 
             logThread = new Thread(new ThreadStart(WriteBackgroundLog));
             logThread.IsBackground = true;
@@ -62,7 +59,6 @@ namespace RainbowMage.OverlayPlugin.Integration
         public void Disable()
         {
             parser.OnOnlineStatusChanged -= OnOnlineStatusChange;
-            enmitySource.CombatStatusChanged -= OnCombatStatusChange;
             logQueue?.Enqueue(null);
         }
 
@@ -107,41 +103,50 @@ namespace RainbowMage.OverlayPlugin.Integration
             logQueue?.Enqueue(line);
         }
 
+
         private void OnOnlineStatusChange(object sender, OnlineStatusChangedArgs ev)
         {
-            if (ev.Target != repo.GetPlayerID())
-                return;
-
-            var cutsceneStatus = ev.Status == 15;
-            if (cutsceneStatus != inCutscene)
-            {
-                inCutscene = cutsceneStatus;
-                string msg;
-
-                if (cutsceneStatus)
-                {
-                    msg = "Entered cutscene";
-                } else
-                {
-                    msg = "Left cutscene";
-                }
-
-                WriteLogMessage(msg);
-            }
         }
 
-        private void OnCombatStatusChange(object sender, CombatStatusChangedArgs ev)
+        private void OnCombatStatusChange(object sender, object ev)
         {
-            string msg;
-            if (ev.InCombat)
-            {
-                msg = "Entered combat";
-            } else
-            {
-                msg = "Left combat";
-            }
-
-            WriteLogMessage(msg);
         }
+
+        //private void OnOnlineStatusChange(object sender, OnlineStatusChangedArgs ev)
+        //{
+        //    if (ev.Target != repo.GetPlayerID())
+        //        return;
+
+        //    var cutsceneStatus = ev.Status == 15;
+        //    if (cutsceneStatus != inCutscene)
+        //    {
+        //        inCutscene = cutsceneStatus;
+        //        string msg;
+
+        //        if (cutsceneStatus)
+        //        {
+        //            msg = "Entered cutscene";
+        //        } else
+        //        {
+        //            msg = "Left cutscene";
+        //        }
+
+        //        WriteLogMessage(msg);
+        //    }
+        //}
+
+        //private void OnCombatStatusChange(object sender, CombatStatusChangedArgs ev)
+        //{
+        //    string msg;
+        //    if (ev.InCombat)
+        //    {
+        //        msg = "Entered combat";
+        //    } else
+        //    {
+        //        msg = "Left combat";
+        //    }
+
+        //    WriteLogMessage(msg);
+        //}
     }
 }

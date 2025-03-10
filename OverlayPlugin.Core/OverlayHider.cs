@@ -18,7 +18,6 @@ namespace RainbowMage.OverlayPlugin
         private IPluginConfig config;
         private ILogger logger;
         private PluginMain main;
-        private FFXIVRepository repository;
         private int bnsPid = -1;
         private Timer focusTimer;
 
@@ -27,11 +26,8 @@ namespace RainbowMage.OverlayPlugin
             this.config = container.Resolve<IPluginConfig>();
             this.logger = container.Resolve<ILogger>();
             this.main = container.Resolve<PluginMain>();
-            this.repository = container.Resolve<FFXIVRepository>();
 
             container.Resolve<NativeMethods>().ActiveWindowChanged += ActiveWindowChangedHandler;
-            container.Resolve<NetworkParser>().OnOnlineStatusChanged += OnlineStatusChanged;
-            container.Resolve<EventSources.EnmityEventSource>().CombatStatusChanged += CombatStatusChanged;
 
             try
             {
@@ -123,18 +119,12 @@ namespace RainbowMage.OverlayPlugin
             UpdateOverlays();
         }
 
-        private void OnlineStatusChanged(object sender, OnlineStatusChangedArgs e)
-        {
-            if (!config.HideOverlayDuringCutscene || e.Target != repository.GetPlayerID()) return;
-
-            inCutscene = e.Status == 15;
-            UpdateOverlays();
-        }
-
-        private void CombatStatusChanged(object sender, EventSources.CombatStatusChangedArgs e)
-        {
-            inCombat = e.InCombat;
-            UpdateOverlays();
-        }
+        //wip - find a way to get inCombat status
+        //
+        //private void CombatStatusChanged(object sender, EventSources.CombatStatusChangedArgs e)
+        //{
+        //    inCombat = e.InCombat;
+        //    UpdateOverlays();
+        //}
     }
 }

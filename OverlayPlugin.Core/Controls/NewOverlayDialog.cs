@@ -25,9 +25,7 @@ namespace RainbowMage.OverlayPlugin
 
         static Dictionary<string, string> overlayNames = new Dictionary<string, string>
         {
-            { "Label", Resources.MapOverlayShortLabel },
             { "MiniParse", Resources.MapOverlayShortMiniParse },
-            { "SpellTimer", Resources.MapOverlayShortSpellTimer },
         };
 
         Dictionary<string, OverlayPreset> presets = null;

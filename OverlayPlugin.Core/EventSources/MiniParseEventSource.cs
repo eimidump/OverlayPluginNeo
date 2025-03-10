@@ -562,7 +562,7 @@ namespace RainbowMage.OverlayPlugin.EventSources
 
         public override void Start()
         {
-            this.timer.Change(0, this.Config.UpdateInterval * 1000);
+            this.timer.Change(0, (int)(this.Config.UpdateInterval * 1000));
         }
 
         protected override void Update()

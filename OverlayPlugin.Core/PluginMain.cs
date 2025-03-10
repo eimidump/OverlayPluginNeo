@@ -92,8 +92,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     _logger.Log(LogLevel.Error, "Failed to load the plugin config. Please report this error on the GitHub repo or on the ACT Discord.");
                     _logger.Log(LogLevel.Error, "");
-                    _logger.Log(LogLevel.Error, "  ACT Discord: https://discord.gg/ahFKcmx");
-                    _logger.Log(LogLevel.Error, "  GitHub repo: https://github.com/eimidump/OverlayPluginNeo");
+                    _logger.Log(LogLevel.Error, "  GitHub repo: https://github.com/azuradara/neo-act-plugin");
 
                     FailWithLog();
                     return;
@@ -415,11 +414,8 @@ namespace RainbowMage.OverlayPlugin
 
                 // Make sure the event sources are ready before we load any overlays.
                 registry.StartEventSource(new MiniParseEventSource(_container));
-                registry.StartEventSource(new EnmityEventSource(_container));
 
                 registry.RegisterOverlay<MiniParseOverlay>();
-                registry.RegisterOverlay<SpellTimerOverlay>();
-                registry.RegisterOverlay<LabelOverlay>();
 
                 var version = typeof(PluginMain).Assembly.GetName().Version;
                 var Addons = new List<IOverlayAddonV2>();
