@@ -1,4 +1,4 @@
-# OverlayPlugin
+# OverlayPlugin for B&S Neo
 
 Plugin to show customizable overlays for Advanced Combat Tracker.
 
